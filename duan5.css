@@ -1,0 +1,155 @@
+/* Reset cơ bản cho trang web */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px; /* Khoảng cách giữa các chữ trong menu */
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #555555;
+  font-weight: 500;
+  font-size: 25px;
+  transition: color 0.3s ease; /* Hiệu ứng chuyển màu mượt mà */
+  position: relative;
+  boder
+}
+
+/* Hiệu ứng di chuột (Hover) cho Menu: Gạch chân hiện ra */
+.main-nav a:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #3498db;
+  transition: width 0.3s ease;
+}
+
+.main-nav a:hover {
+  color: #3498db;
+}
+.main-nav a:hover::after {
+  width: 100%; /* Gạch chân chạy dài ra khi di chuột */
+}
+article{
+    background: #F5DEB3;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: relative;
+    border: 4px solid #FF8C00;
+    flex:1;
+    
+   
+}
+.l1{
+    background-color: #da7c24;
+  box-shadow: 0 4px 10px rgba(189, 103, 5, 0.781);
+    display: flex;
+    margin-bottom: 2rem;
+
+}
+section{
+   display: flex;
+  flex-wrap: wrap;}
+
+article:hover{
+    background-color:rgb(59, 179, 23);
+    padding: 1.6rem;
+    box-shadow: 0 4px 12px rgba(139, 199, 28, 0.692);
+    position: relative;
+    border: 4px solid #12011f;
+}
+.thienlong{    background-color: #da7c24;
+  box-shadow: 0 4px 10px rgba(189, 103, 5, 0.781);
+    display:flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  
+flex-wrap: wrap;}
+
+
+  .thienlong>article>img{
+    width: 100%;
+    height:auto
+  
+  }
+         footer{
+          font-style: italic;
+          font-family: Arial, Helvetica, sans-serif;
+         }       
+  .l2{
+    border: 2px sandybrown;
+    width: auto;
+    height: 400px;
+    font-style: oblique;
+    background-color: #F5DEB3;
+    text-align: center;
+    font-size: 25px;
+  }
+  
+/* CSS này chỉ dành riêng cho khung hiển thị ảnh to */
+/* CSS này chỉ dành riêng cho khung hiển thị ảnh to */
+#image {
+    width: 400px;                 
+    height: auto;               /* Bắt buộc phải có để khung không bị xẹp lép */
+    background-color: #e0e0e0;   /* Màu nền xám mặc định khi chưa di chuột */
+    background-size: cover;      /* Giúp ảnh hiển thị full khung không bị méo */
+    background-position: center; 
+    background-repeat: no-repeat;
+    margin-bottom: 30px;         /* Tạo khoảng trống đẩy hàng 4 ảnh xuống dưới một chút cho đẹp */
+    
+    /* Chỉnh chữ hiển thị bên trong khung */
+    color: #333333;              
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;          
+    line-height: 400px;          /* Căn chữ ra giữa khung theo chiều dọc */
+}
+/* =========================================
+   1. CHẾ ĐỘ MÁY TÍNH BẢNG (Kích hoạt từ 772px)
+   ========================================= */
+@media screen and (min-width: 772px) {
+    /* Lựa chọn các thẻ div cần chia cột (Hãy thay 'div' bằng class cụ thể của bạn nếu cần) */
+    div {
+        width: 45vw;             /* 1a. Chiều rộng bằng 45% chiều rộng chế độ xem (viewport width) */
+        display: inline-block;   /* 1b. Lệnh thêm: Bắt buộc để các div xếp ngang hàng nhau thay vì xếp dọc */
+        vertical-align: top;     /* 1b. Căn chỉnh mép trên của các div cho đều nhau */
+        box-sizing: border-box;  /* Giúp giữ đúng kích thước 45vw nếu có viền (border) */
+    }
+
+    /* Giới hạn kích thước hình ảnh */
+    img {
+        max-height: 30vh;        /* 1a. Chiều cao không quá 30% chiều cao chế độ xem (viewport height) */
+        width: auto;             /* Giữ nguyên tỷ lệ khung hình của ảnh để không bị méo */
+    }
+}
+
+/* =========================================
+   2. CHẾ ĐỘ MÀN HÌNH LỚN (Kích hoạt từ 998px)
+   ========================================= */
+@media screen and (min-width: 998px) {
+    div {
+        width: 30vw;             /* 2a. Đổi chiều rộng thành 30% chiều rộng chế độ xem */
+        /* 2b. Không cần thay đổi nào khác (Nó sẽ tự kế thừa display: inline-block từ truy vấn 772px ở trên) */
+    }
+}
+#c1 { /* Hoặc .site, header */
+    background-color: #ff8c00; /* Màu cam của bạn giữ nguyên */
+    height: auto;              /* Khuyên dùng: Để chiều cao tự động co vừa với chữ bên trong */
+    padding: 15px 20px;        /* Chỉ để khoảng 15px đệm ở trên/dưới và 20px ở trái/phải */
+}
+#c1 { /* Hoặc .site, header */
+    background-color: #ff8c00; /* Màu cam của bạn giữ nguyên */
+    height: auto;              /* Khuyên dùng: Để chiều cao tự động co vừa với chữ bên trong */
+    padding: 15px 20px;        /* Chỉ để khoảng 15px đệm ở trên/dưới và 20px ở trái/phải */
+}

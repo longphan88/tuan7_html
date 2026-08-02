@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thienlongtuan5javacript</title>
+    <link rel="stylesheet" href="duan5.css">
+</head>
+<!-- Yêu cầu 8: Thêm trình nghe cho onload -->
+<body onload="initialize()">
+    <script>
+        function upDate(previewPic) {
+            console.log("Sự kiện onmouseover/onfocus đã kích hoạt!");
+            console.log("Alt của ảnh: " + previewPic.alt);
+            console.log("Source của ảnh: " + previewPic.src);
+
+            let imageDiv = document.getElementById('image');
+            imageDiv.innerHTML = previewPic.alt;
+            imageDiv.style.backgroundImage = "url('" + previewPic.src + "')";
+        }
+
+        function unDo() {
+            let imageDiv = document.getElementById('image');
+            imageDiv.style.backgroundImage = "url('')";
+            imageDiv.innerHTML = "Di chuột qua hoặc dùng phím Tab focus vào một hình ảnh bên dưới để hiển thị ở đây.";
+        }
+
+        // Yêu cầu 8 & 9: Hàm được gọi khi trang tải xong
+        function initialize() {
+            // Yêu cầu 9a: Thêm thông báo console.log để đảm bảo sự kiện kích hoạt
+            console.log("Sự kiện onload đã kích hoạt. Bắt đầu gán tabindex...");
+            
+            // Lấy danh sách tất cả các ảnh nằm trong class 'thienlong'
+            let images = document.querySelectorAll('.thienlong img');
+            
+            // Yêu cầu 9b: Viết một vòng lặp for để lặp qua từng hình ảnh
+            for (let i = 0; i < images.length; i++) {
+                // Yêu cầu 9c: Thêm thuộc tính tabindex
+                images[i].setAttribute('tabindex', '0');
+                console.log("Đã gán tabindex cho ảnh: " + images[i].alt);
+            }
+        }
+    </script>
+    
+    <header id="c1" class="site">
+        <nav class="main-nav">
+        <ul>
+            <li><a href="#c1">trang chu</a></li>
+            <li><a href="#c2">tuyen quang</a></li>
+            <li><a href="#c3">cac dia danh noi tieng</a></li>
+        </ul>
+        </nav>
+    </header>
+    <main>
+        <h2 id="c2">1. Giới thiệu về tỉnh Tuyên Quang.</h2>
+        <div class="l1">
+            <article>
+                <h2>Vị trí địa lý – Quy mô – Đơn vị hành chính</h2>
+                <p>Tỉnh Tuyên Quang mới nằm ở trung tâm vùng Đông Bắc Bộ, tiếp giáp với các tỉnh: Cao Bằng, Thái Nguyên, Phú Thọ, Lào Cai và có đường biên giới quốc gia dài 277,556km, tiếp giáp với tỉnh Vân Nam (Trung Quốc) thông qua cửa khẩu quốc tế Thanh Thủy. Đây là vị trí có ý nghĩa chiến lược cả về quốc phòng – an ninh và phát triển kinh tế đối ngoại.
+                Diện tích tự nhiên: 13.795,6 km²
+                Dân số: 1.865.270 người (năm 2025)
+                Cơ cấu hành chính: Sau khi sắp xếp đơn vị hành chính, tỉnh Tuyên Quang mới có 124 đơn vị hành chính cấp xã (gồm 117 xã và 7 phường). Trong đó, có 104 xã và 7 phường mới được hình thành sau khi sáp nhập từ các đơn vị hành chính cấp xã hiện có; 13 xã giữ nguyên không thực hiện sáp nhập.</p>
+            </article>
+            <article>
+                <h2>Lịch sử – Văn hóa: Sự giao thoa và kế thừa</h2>
+                <p>Tuyên Quang và Hà Giang – hai vùng đất có vị trí đặc biệt trong lịch sử dân tộc, khi hợp nhất đã kết nối hai không gian di sản. Một bên là vùng đất cách mạng tiêu biểu, nơi ghi dấu bước ngoặt quan trọng của cách mạng Việt Nam, một bên là vùng biên cương địa đầu, giàu bản sắc văn hóa và kiên trung giữ nước của Tổ quốc.
+                Tuyên Quang – được biết đến  “Thủ đô Khu giải phóng – Thủ đô Kháng chiến”, nơi Bác Hồ và Trung ương Đảng từng lãnh đạo nhân dân kháng chiến chống thực dân Pháp. Các di tích lịch sử như: Làng Tân Trào, đình Tân Trào, Lán Nà Nưa, cây đa Tân Trào… đã trở thành “địa chỉ đỏ” trong hành trình về nguồn của cả nước.
+                Hà Giang – là vùng đất địa đầu cực Bắc của Tổ quốc, nơi có những địa danh thiêng liêng như Cột cờ Lũng Cú, Cao nguyên đá Đồng Văn, đèo Mã Pì Lèng, Dinh họ Vương, gắn liền với truyền thống giữ nước, bảo vệ chủ quyền biên giới quốc gia. Năm 2010, Cao nguyên đá Đồng Văn được công nhận là Công viên địa chất toàn cầu đầu tiên của Việt Nam.</p>
+            </article>
+            <article>
+                <h2>Kinh tế – Xã hội: Mở rộng không gian, khai thác tiềm năng</h2>
+                <p> Sự hợp nhất giữa hai địa phương đã mở ra một không gian phát triển mới, rộng lớn và giàu tiềm năng, tạo tiền đề để khai thác hiệu quả trên mọi lĩnh vực. Trong giai đoạn trước mắt, tỉnh mới tập trung tổ chức lại không gian phát triển phù hợp với mô hình đơn vị hành chính và chính quyền địa phương hai cấp, bảo đảm đồng bộ, khoa học và hiệu quả trên tất cả các lĩnh vực.
+                Nông – Lâm nghiệp: Lấy liên kết vùng làm động lực, tỉnh xác định rõ các vùng trọng điểm, cực tăng trưởng mới, hành lang phát triển dựa trên hệ thống kết cấu hạ tầng kinh tế – xã hội hiện đại. Phát triển nông nghiệp bền vững gắn với các sản phẩm đặc trưng đã có thương hiệu như chè Shan Tuyết, cam sành Hàm Yên, gạo Tân Trào, thịt bò Vàng vùng cao, mật ong bạc hà Đồng Văn, lợn đen, hồng không hạt… hướng tới mở rộng thị trường trong và ngoài nước.</p> 
+            </article>
+        </div>
+
+        <h2 id="c3">2. Một số địa điểm ở Tuyên Quang</h2>
+        <div class="thienlong">
+            <!-- Yêu cầu 2: Sử dụng 6 hình ảnh và cập nhật alt text -->
+            <!-- Yêu cầu 6: Thêm sự kiện onfocus và onblur -->
+            <article>
+                <img src="lannalua.jpg" alt="Lán Nà Nưa tại Tân Trào" onmouseover="upDate(this)" onmouseout="unDo()" onfocus="upDate(this)" onblur="unDo()">
+                <p>hình lịch sử tại tân trào</p>
+            </article>
+            <article>
+                <img src="thuydianhb.jpg" alt="Thủy điện Hòa Bình" onmouseover="upDate(this)" onmouseout="unDo()" onfocus="upDate(this)" onblur="unDo()">
+                <p>hình ảnh thủy điện hòa bình</p>
+            </article>
+            <article>
+                <img src="Lich-su-hinh-thanh-va-phat-trien-dem-hoi-Trung-thu-Tuyen-Quang-1-1.jpg" alt="Trung thu tại Tuyên Quang" onmouseover="upDate(this)" onmouseout="unDo()" onfocus="upDate(this)" onblur="unDo()">
+                <p>trung thu tại tuyên quang</p>
+            </article>
+            <article>
+                <img src="chuyentq.jpg" alt="Trường THPT chuyên Tuyên Quang" onmouseover="upDate(this)" onmouseout="unDo()" onfocus="upDate(this)" onblur="unDo()">
+                <p>ảnh trường THPT chuyên Tuyên Quang</p>
+            </article>
+            <article>
+                <img src="lannalua.jpg" alt="Cây đa Tân Trào" onmouseover="upDate(this)" onmouseout="unDo()" onfocus="upDate(this)" onblur="unDo()">
+                <p>Cây đa Tân Trào lịch sử</p>
+            </article>
+            <article>
+                <img src="Lich-su-hinh-thanh-va-phat-trien-dem-hoi-Trung-thu-Tuyen-Quang-1-1.jpg" alt="Quảng trường Nguyễn Tất Thành" onmouseover="upDate(this)" onmouseout="unDo()" onfocus="upDate(this)" onblur="unDo()">
+                <p>Quảng trường Nguyễn Tất Thành</p>
+            </article>
+        </div>
+        <br>
+        
+        <div id="image">
+            Di chuột qua hoặc dùng phím Tab focus vào một hình ảnh bên dưới để hiển thị ở đây.
+        </div>
+        
+        <div class="l2">
+            <h3>ban thay tuyen quang co tuyet voi khong?</h3>
+            <button onclick=" document.getElementById('output').innerHTML='thankiu very much';">co</button>
+            <button onclick=" document.getElementById('output').innerHTML='ohh sory';">khong</button>
+            <p>loi cam on va xin loi </p>
+            <p id="output"> ban se thay phan hoi cua toi o day</p>
+            <p>cam on ban da tham gia</p>
+        </div>
+    </main>
+    <hr>
+    <footer>
+        <p>@trang web duoc tao boi phan thien long</p>
+        <p>sdt:08656732388</p>
+        <p>EMAIL:phamthientai12@gmail.com</p>
+    </footer>
+</body>
+</html>
